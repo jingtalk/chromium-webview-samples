@@ -1,24 +1,22 @@
 package fullscreenvideosample.android.chrome.google.com.fullscreenvideosample;
 
 import android.annotation.TargetApi;
-import android.app.Activity;
-
 import android.app.ActionBar;
+import android.app.Activity;
 import android.app.Fragment;
 import android.app.FragmentManager;
-import android.content.Context;
 import android.content.pm.ActivityInfo;
 import android.graphics.Bitmap;
 import android.graphics.BitmapFactory;
 import android.os.Build;
 import android.os.Bundle;
 import android.os.Handler;
+import android.support.v4.widget.DrawerLayout;
 import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
-import android.support.v4.widget.DrawerLayout;
 import android.webkit.WebChromeClient;
 import android.webkit.WebSettings;
 import android.webkit.WebView;
@@ -154,7 +152,10 @@ public class MainActivity extends Activity
 
             setUpWebViewDefaults(mWebView);
 
-            mWebView.loadUrl("file:///android_asset/www/index.html");
+//            mWebView.loadUrl("file:///android_asset/www/index.html");
+            mWebView.loadUrl("http://m.youtube.com");
+
+//            mWebView.setWebChromeClient(new WebChromeClient());   // 没有全屏按钮
 
             mWebView.setWebChromeClient(new WebChromeClient() {
 
@@ -222,6 +223,7 @@ public class MainActivity extends Activity
                 }
 
             });
+
 
             return rootView;
         }
